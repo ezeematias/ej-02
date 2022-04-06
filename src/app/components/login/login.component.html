@@ -19,6 +19,8 @@
                     <input autocomplete="new-password"
                     #password class="form-control" formControlName="password" type="password" placeholder="Ingrese su password"
                     [(ngModel)]="usuario.password" required>
+                <div class="errorMessage" *ngIf="getValue('password')?.invalid && (getValue('password').touched || getValue('password').dirty)">Mínimo 6 caracteres</div>
+
                 </div>
 
                 <button class="btn btn-primary form-control" type="submit" (click)="ingresar()" [disabled]="!form.valid">Ingresar</button>
